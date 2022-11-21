@@ -7,9 +7,12 @@ package testApp;
 
 import com.github.javafaker.Faker;
 import com.ronal.app_basespring.entity.Estudiante;
+import com.ronal.app_basespring.entity.Libro;
 import com.ronal.app_basespring.service.EstudianteService;
 
 import java.util.List;
+
+import com.ronal.app_basespring.service.LibroServices;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +32,7 @@ public class PruebasTest {
     
     @Autowired
     private EstudianteService estudianteService;
+    private LibroServices libroServices;
 
     @Test
     public void TestEjemploNull() {
@@ -45,6 +49,15 @@ public class PruebasTest {
         String nombre = faker.name().name();
         List<Estudiante> lista = estudianteService.readEstudiantes();
         assertFalse(lista.size() >0);
+
+    }
+
+    @Test
+    public void testServicelibro() {
+        Faker faker = new Faker();
+        String nombre = faker.name().name();
+        List<Libro> listalibro = libroServices.obtenerLibro();
+        assertFalse(listalibro.size() >0);
 
     }
 }

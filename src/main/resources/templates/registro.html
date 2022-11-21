@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
-<title>Registro de estudiantes</title>
+<title>Registro de Usuarios</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -18,18 +18,9 @@
 <body>
 
 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<nav class="navbar navbar-fixed-top" style="background-color: #CACABF;">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#" th:href="@{/}">Registro y
-					inicio de sesión</a>
 			</div>
 		</div>
 	</nav>
@@ -42,13 +33,14 @@
 			<div class="col-md-6 col-md-offset-3">
 				<div th:if=${param.exito}>
 					<div class="alert alert-info">Se ha registrado exitosamente a
-						la aplicación</div>
+						la aplicación
+					</div>
 				</div>
-                                <div th:if=${param.error}>
+				<div th:if=${param.error}>
 					<div class="alert alert-danger">Error en el registro del estudiante</div>
 				</div>
 
-				<h1>Registro para reserva de libros</h1>
+				<h1>Registro de Usuarios</h1>
 				<form th:action="@{/registro}" method="post" th:object="${estudiante}">
 					<div class="form-group">
 						<label class="control-label" for="cedula">Cedula: </label> <input

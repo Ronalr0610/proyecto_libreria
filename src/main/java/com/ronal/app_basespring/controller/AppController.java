@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AppController {
     @GetMapping
     public String iniciar(){
-        return "index";
+        return "autenticar";
     }
     
     @GetMapping("/index")
