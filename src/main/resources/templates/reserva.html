@@ -41,11 +41,26 @@
             </div>
 
             <h1>Reserva de Libros</h1>
-            <form method="post" th:action="@{/reserva}" th:object="${reserva}">
-                <div class="form-group">
-                    <label class="control-label" for="codigo">Codigo: </label> <input
-                        id="codigo" type="text" class="form-control" th:field="*{codigo}"
-                        required autofocus="autofocus">
+            <form method="post" th:action="@{/reserva}" th:object="${reservas}">
+                <div class="position-relative form-group">
+                    <table class="table table-striped table-bordered">
+                        <thead class="table-dark">
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th>Tipo</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="dato : ${libros}">
+                                <td th:text="${dato.codigo}">ID</td>
+                                <td th:text="${dato.nombre}">ID</td>
+                                <td th:text="${dato.cantidad}">ID</td>
+                                <td th:text="${dato.tipo}">ID</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="position-relative form-group">
                     <label for="fechaInicial" class="">Fecha inicio Reserva</label>
@@ -53,15 +68,14 @@
                            required autofocus="autofocus">
                 </div>
                 <div class="position-relative form-group">
-                    <label for="fechaFin" class="">Fecha inicio Reserva</label>
+                    <label for="fechaFin" class="">Fecha fin Reserva</label>
                     <input id="fechaFin" type="date" class="form-control" th:field="*{fechaFinal}"
                            required autofocus="autofocus">
                 </div>
 
                 <div class="col-md-8 col-md-offset-3">
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Registrar Libro</button>
-                        <span><a th:href="@{/autenticar}"><button type="button" class="btn btn-secondary">regresar Log-in</button></a></span>
+                        <button type="submit" class="btn btn-primary">Guardar Reserva</button>
                     </div>
                 </div>
 

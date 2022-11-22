@@ -12,11 +12,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-@Log4j2
-public class LibroServices {
-
-    @PersistenceContext
-    private EntityManager entityManager;
+public class LibroService {
 
     @Autowired
     private LibroRepository libroRepository;
@@ -35,7 +31,8 @@ public class LibroServices {
             throw e;
         }
     }
-    public List<Libro> obtenerLibro(){
+    //listar los libros
+    public List<Libro> obtenerLibros(){
         return libroRepository.findAll();
     }
 }

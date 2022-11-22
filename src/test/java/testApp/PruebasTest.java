@@ -12,12 +12,14 @@ import com.ronal.app_basespring.service.EstudianteService;
 
 import java.util.List;
 
-import com.ronal.app_basespring.service.LibroServices;
+import com.ronal.app_basespring.service.LibroService;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
 
 
@@ -32,32 +34,29 @@ public class PruebasTest {
     
     @Autowired
     private EstudianteService estudianteService;
-    private LibroServices libroServices;
+    @Autowired
+    private LibroService libroService;
 
     @Test
-    public void TestEjemploNull() {
+    public void TestEjemploNull() throws Exception{
         Faker faker = new Faker();
         String nombre = faker.name().name();
-
         assertFalse(nombre.length() == 0);
 
     }
 
     @Test
-    public void testService() {
+    public void testService() throws Exception{
         Faker faker = new Faker();
-        String nombre = faker.name().name();
         List<Estudiante> lista = estudianteService.readEstudiantes();
         assertFalse(lista.size() >0);
 
     }
 
     @Test
-    public void testServicelibro() {
+    public void testServicelibro() throws Exception{
         Faker faker = new Faker();
-        String nombre = faker.name().name();
-        List<Libro> listalibro = libroServices.obtenerLibro();
+        List<Libro> listalibro = libroService.obtenerLibros();
         assertFalse(listalibro.size() >0);
-
     }
 }

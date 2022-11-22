@@ -13,9 +13,13 @@ import java.util.Date;
 @Entity
 public class Reserva {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "cedula", referencedColumnName = "cedula")
     private Estudiante usuarioId;
+    @ManyToOne
+    @JoinColumn(name = "codigo", referencedColumnName = "codigo")
     private Libro libroId;
     private Date fechaInicial;
     private Date fechaFinal;
