@@ -33,7 +33,7 @@ public class AutenticarController {
     
     @GetMapping("/autenticarOK")
     public String verPaginaDeInicio(Model modelo) {
-        System.out.println("Modelo ");
+        System.out.println("Modelo");
         System.out.println(modelo.getAttribute("username"));
         
         List<Estudiante> estudiantes = estudianteService.readEstudiantes();

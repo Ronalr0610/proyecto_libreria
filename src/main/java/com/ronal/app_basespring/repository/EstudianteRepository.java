@@ -8,6 +8,8 @@ import com.ronal.app_basespring.entity.Estudiante;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  *
  * @author Ronal
@@ -16,5 +18,5 @@ import org.springframework.stereotype.Repository;
 public interface  EstudianteRepository extends JpaRepository<Estudiante, Integer>  {
     public boolean existsByCedula(Long cedula);
     public Estudiante findByEmail(String email);
-    
+
 }

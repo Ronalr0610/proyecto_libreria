@@ -23,7 +23,6 @@ public class Estudiante implements Serializable {
     
     @Id
     private Long cedula;
-
     private String nombre;
     private String apellido;
     private String email;

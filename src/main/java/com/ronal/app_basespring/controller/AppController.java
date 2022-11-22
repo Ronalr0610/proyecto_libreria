@@ -4,7 +4,10 @@
  */
 package com.ronal.app_basespring.controller;
 
+import com.ronal.app_basespring.service.LibroService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
@@ -13,14 +16,16 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Controller
 public class AppController {
+
     @GetMapping
     public String iniciar(){
-        return "index";
+        return "autenticar";
     }
     
     @GetMapping("/index")
     public String iniciarI(){
         return "index";
     }
+
 
 }
